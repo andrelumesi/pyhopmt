@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>README</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var userLang = navigator.language || navigator.userLanguage;
+            if (userLang.startsWith("pt")) {
+                window.location.href = "README-pt.md";
+            } else if (userLang.startsWith("es")) {
+                window.location.href = "README-es.md";
+            } else {
+                window.location.href = "README-en.md";
+            }
+        });
+    </script>
+</head>
+<body>
+    <p>Redirecting to the appropriate README...</p>
+</body>
+</html>
