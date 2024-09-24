@@ -193,7 +193,7 @@ def print_methods(mlist=methods):
 from concurrent.futures import ThreadPoolExecutor
 plans = []
 futures = []
-executor = ThreadPoolExecutor(1)
+executor = ThreadPoolExecutor(20)
 def pyhop(state,tasks,verbose=0):
     """
     Try to find a plan that accomplishes tasks in state. 
