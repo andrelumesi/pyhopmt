@@ -6,7 +6,7 @@ This file should work correctly in both Python 2.7 and Python 3.2.
 
 #import pyhop
 
-import pyhopmtpool as pyhop
+import pyhopmt as pyhop
 
 def taxi_rate(dist):
     return (1.5 + 0.5 * dist)

@@ -124,6 +124,16 @@ def print_state(state,indent=4):
                 print(' =', val)
     else: print('False')
 
+def state_str(state,indent=4):
+    """Print each variable in state, indented by indent spaces."""
+    string = ""
+    if state != False:
+        for (name,val) in vars(state).items():
+            if name != '__name__':
+                string = string + state.__name__ + '.' + name
+                string = string + ' = ' + str(val) + "; "
+    return string
+
 def print_goal(goal,indent=4):
     """Print each variable in goal, indented by indent spaces."""
     if goal != False:
@@ -221,6 +231,8 @@ def seek_plan(state,tasks,plan,depth,verbose=0):
     if verbose>1: print('depth {} tasks {}'.format(depth,tasks))
     if tasks == []:
         if verbose>2: print('depth {} returns plan {}'.format(depth,plan))
+        plan.insert(0,"Plan " + str(len(plans)))
+        plan.append(state_str(state))
         plans.append(plan)
         return plan
     task1 = tasks[0]
